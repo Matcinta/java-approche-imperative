@@ -2,28 +2,23 @@ package fr.declaration.variable;
 
 import java.util.Scanner;
 
-public class Exercice8 {
+public class Exercice9 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		Scanner scanner = new Scanner(System.in) ;
+		int [] tab = new int[10];
+		for(int i = 0; i < 10; i ++) {
+			tab[i] = scanner.nextInt();
+		}
+		int max = tab[0];
+		for(int i = 1; i < tab.length; i++) {
+			if(tab[i] > max) {
+				max = tab[i];
+			}
+		}
+		System.out.println("max : " + max);
+		scanner.close();
 
-		Scanner scanner = new Scanner(System.in);
-		
-		System.out.println("Veuillez saisir un nombre compris entre 1 et 10:");
-		int valeur = scanner.nextInt();
-		
-		if (valeur>10){
-			System.out.println("Ce nombre est trop grand, veuillez recommencer");
-			System.out.println("Veuillez saisir un nombre compris entre 1 et 10:");
-		} 
-		else if (valeur<1){
-			System.out.println("Ce nombre est trop petit, veuillez recommencer");
-			System.out.println("Veuillez saisir un nombre compris entre 1 et 10:");
-		} 
-		else {
-			System.out.println(valeur);
-			System.out.println("Au revoir!"); //On sort du programme
-		}	
 	}
 
 }

@@ -2,39 +2,50 @@ package fr.declaration.variable;
 
 import java.util.Scanner;
 
-public class Exercice8 {
+public class Exercice10 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-		//L'objet Scanner
-		Scanner scanner = new Scanner(System.in);
-		
-		//Initialisation des variables
-		char reponse = ' ';
-		int nombre = ' ';
-		int tableauNombres [] = new int [10];
-
-		System.out.println("MENU");
-		System.out.println("1. Ajouter un nombre");
-		System.out.println("2. Afficher les nombres existants");
-		reponse = sc.nextLine().charAt(0);
-
-		if (tableauNombres){//si le tableau n'est pas plein l'utilisateur peut faire les choix 1 et 2 du menu:
-			if (reponse == '1'){
-				System.out.println("Veuillez saisir un nombre:");
-				nombre = sc.nextLine();
-
-			}
-			else if (reponse == '2'){
-				for(int i = 0; i<tableauNombres.length; i++) {
-				System.out.print(tableauNombres[i]+" ");
+		Scanner scanner = new Scanner(System.in) ;
+		int nb = 0;
+		int indexTableau = 0;
+		int[] tab = new int[4];
+		while(nb != 3) {
+			do {
+				System.out.println("1. Ajouter un nombre\n2.Afficher les nombres existants\n3.Sortie");
+				nb = scanner.nextInt() ;
+				if(nb > 3) {
+					System.out.println("Ce nombre est trop grand, veuillez recommencer");
+				} else if (nb < 1) {
+					System.out.println("Ce nombre est trop petit, veuillez recommencer");
 				}
+			} while(nb < 1 || nb > 3);
+			switch (nb) {
+				case 1 :
+					if (indexTableau >= tab.length) {
+						int[] newTab = new int[tab.length + 4];
+						for(int i = 0; i < tab.length; i++) {
+							newTab[i] = tab[i];
+						}
+						tab = newTab;
+					}
+					System.out.println("entrez un nombre a ajouter au tableau :");
+					tab[indexTableau] = scanner.nextInt();
+					indexTableau ++;
+					break;
+				case 2 :
+					System.out.println("contenu du tableau :");
+					for(int i = 0; i < indexTableau; i++) {
+						System.out.print(tab[i] + " ");
+					}
+					System.out.println("");
+					break;
+				default :
+					break;
 			}
-		}
-		else if { // Si le tableau est plein, agrandir le tableau:
+		}	
+		scanner.close();
+		
 
-		}
 	}
 
 }

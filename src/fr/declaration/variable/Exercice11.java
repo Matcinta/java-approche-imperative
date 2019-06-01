@@ -5,27 +5,20 @@ import java.util.Scanner;
 public class Exercice11 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-
-				Scanner scanner = new Scanner(System.in);
-				
-				System.out.println("Veuillez saisir un nombre compris entre 1 et 10:");
-				int valeur = scanner.nextInt();
-				
-				if (valeur>10){
-					System.out.println("Ce nombre est trop grand, veuillez recommencer");
-					System.out.println("Veuillez saisir un nombre compris entre 1 et 10:");
-				} 
-				else if (valeur<1){
-					System.out.println("Ce nombre est trop petit, veuillez recommencer");
-					System.out.println("Veuillez saisir un nombre compris entre 1 et 10:");
-				} 
-				else {
-					System.out.println(valeur);
-					System.out.println("Au revoir!"); //On sort du programme
-				}	
-			}
-
+		Scanner scanner = new Scanner(System.in) ;
+		System.out.println("entrez un nombre");
+		int nb = scanner.nextInt() ;
+		int n1 = 0;
+		int n2 = 1;
+		int resultat = 0;
+		for(int i = 0; i < nb; i++) {
+			resultat = n1+n2;
+			n1 = n2;
+			n2 = resultat;
 		}
+		System.out.println(resultat);
+		scanner.close();
 
+	}
+
+}
